@@ -206,9 +206,34 @@
       .product-img { width: 56px; height: 56px; }
       .btn, .more-btn { font-size: 0.99rem; padding: 7px 12px;}
     }
+  .music-tip {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(34,34,34, 0.93);
+  color: #fff;
+  padding: 22px 36px 18px 36px;
+  border-radius: 16px;
+  font-size: 1.18rem;
+  font-family: 'Montserrat', 'Noto Serif SC', serif;
+  box-shadow: 0 4px 24px #2227;
+  z-index: 9999;
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+.music-tip.hide {
+  opacity: 0;
+  pointer-events: none;
+}
   </style>
 </head>
 <body>
+  <div id="music-tip" class="music-tip">
+  <span style="font-size:0.98em;color:#aaa;">Please tap anywhere to enable background music.</span>
+</div>
   <div class="navbar">Experimental Material A for Survey</div>
   <div class="container">
     <span class="title-main">Simulation of Cross-Cultural Sensory Stimulation and Online Shopping Experiences:</span>
@@ -306,11 +331,20 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var played = false;
+  var tip = document.getElementById('music-tip');
   function playBGM() {
     if (played) return;
     var ap = document.querySelector('meting-js').aplayer;
-    if (ap) { ap.audio.play(); played = true; }
-    else setTimeout(playBGM, 500);
+    if (ap) {
+      ap.audio.play();
+      played = true;
+      if (tip) {
+        tip.classList.add('hide');
+        setTimeout(function(){ tip.style.display = 'none'; }, 900);
+      }
+    } else {
+      setTimeout(playBGM, 500);
+    }
   }
   document.body.addEventListener('click', playBGM, { once: true });
 });
