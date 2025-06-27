@@ -303,5 +303,17 @@
     order="list"
     volume="0.5"
   ></meting-js>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var played = false;
+  function playBGM() {
+    if (played) return;
+    var ap = document.querySelector('meting-js').aplayer;
+    if (ap) { ap.audio.play(); played = true; }
+    else setTimeout(playBGM, 500);
+  }
+  document.body.addEventListener('click', playBGM, { once: true });
+});
+</script>
 </body>
 </html>
