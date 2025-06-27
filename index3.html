@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulation of Cross-Cultural Sensory Stimulation and Online Shopping Experiences: Page and Music Sensory Stimulation</title>
+  <!-- Fonts and APlayer, MetingJS dependencies -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+  <style>
+    body {
+      background-color: #f3f7fb;
+      background-image: url('蓝白格子.png');
+      background-repeat: repeat;
+      background-size: 340px auto;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .navbar {
+      width: 100%;
+      height: 56px;
+      background: #1a347a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 1.18rem;
+      letter-spacing: 2px;
+      font-family: 'Montserrat', 'Noto Serif SC', serif;
+      padding: 0 40px;
+      box-shadow: 0 4px 16px #1a347a16;
+    }
+    .container {
+      max-width: 960px;
+      margin: 48px auto 0 auto;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px #1a347a24;
+      padding: 34px 26px 38px 26px;
+      border: 3.5px solid #3b568f;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title-main {
+      color: #3b568f;
+      font-size: 2.1rem;
+      text-align: center;
+      letter-spacing: 2.5px;
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 700;
+      margin-bottom: 0px;
+      margin-top: 6px;
+      line-height: 1.2;
+      text-shadow: 1px 1px 0 #e5ecf7;
+      display: block;
+    }
+    .title-sub {
+      color: #3b568f;
+      font-size: 2.1rem;
+      text-align: center;
+      letter-spacing: 2.5px;
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 700;
+      margin-bottom: 18px;
+      margin-top: 0px;
+      line-height: 1.2;
+      text-shadow: 1px 1px 0 #e5ecf7;
+      display: block;
+    }
+    p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #193063;
+      text-align: center;
+      font-family: 'Noto Serif SC', serif;
+      margin: 0 0 22px 0;
+    }
+    .product-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin: 30px 0 22px 0;
+    }
+    .product-card {
+      flex: 1 1 420px;
+      max-width: 440px;
+      min-width: 295px;
+      background: #f5f8fcf0;
+      border-radius: 16px;
+      padding: 18px 20px 16px 20px;
+      box-shadow: 0 2px 12px #1a347a15;
+      border: 1.5px solid #b8cbe9;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 96px;
+      transition: box-shadow 0.2s;
+      position: relative;
+      margin-bottom: 0;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 24px #1a347a24;
+    }
+    .product-img {
+      width: 72px;
+      height: 72px;
+      background: #e8eef8;
+      border-radius: 12px;
+      border: 1.2px solid #b8cbe9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      color: #3b568f;
+      font-family: 'Montserrat', Arial, sans-serif;
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+    .product-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .product-title {
+      color: #1a347a;
+      font-weight: bold;
+      font-size: 1.13rem;
+      margin-bottom: 4px;
+      font-family: 'Noto Serif SC', serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .product-desc {
+      font-size: 0.99rem;
+      color: #3b568f;
+      margin-bottom: 6px;
+      font-family: 'Noto Serif SC', serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .product-price {
+      color: #1a347a;
+      font-size: 1.09rem;
+      margin-top: 1px;
+      font-weight: 600;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .btn {
+      display: inline-block;
+      margin-left: 20px;
+      padding: 9px 22px;
+      background: linear-gradient(90deg, #4a7bd4 60%, #193063 100%);
+      color: #fff;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.02rem;
+      border: none;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #4a7bd433;
+      transition: background .3s;
+      white-space: nowrap;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #193063 60%, #4a7bd4 100%);
+    }
+    .more-btn {
+      display: block;
+      margin: 16px auto 0 auto;
+      padding: 10px 36px;
+      font-size: 1.08rem;
+      background: linear-gradient(90deg, #4a7bd4 50%, #193063 100%);
+      border-radius: 30px;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      box-shadow: 0 3px 12px #4a7bd433;
+      transition: background .3s;
+    }
+    .more-btn:hover {
+      background: linear-gradient(90deg, #193063 50%, #4a7bd4 100%);
+    }
+    @media (max-width: 950px) {
+      .container { padding: 16px 2vw; }
+      .product-card { min-width: 220px; }
+    }
+    @media (max-width: 800px) {
+      .container { max-width: 99vw; }
+      .product-list { flex-direction: column; gap: 18px; }
+      .product-card { max-width: 99vw; min-width: 0; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 7px 0; }
+      .title-main, .title-sub { font-size: 1.13rem; }
+      .product-card { flex-direction: column; gap: 8px; padding: 14px 8px; }
+      .product-img { width: 56px; height: 56px; }
+      .btn, .more-btn { font-size: 0.99rem; padding: 7px 12px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">Experimental Material B for Survey</div>
+  <div class="container">
+    <span class="title-main">Simulation of Cross-Cultural Sensory Stimulation and Online Shopping Experiences:</span>
+    <span class="title-sub">Page and Music Sensory Stimulation</span>
+    <p>
+      Thank you for participating in this questionnaire. This page presents a simulated online shopping website with background music, aiming to investigate how different sensory elements influence users’ emotional engagement and satisfaction with online shopping. Please carefully browse the page and listen to the music, then answer the questionnaire based on your true experience. This page is for academic research purposes only, and all data will be kept strictly confidential.
+    </p>
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-img">Img1</div>
+        <div class="product-info">
+          <div class="product-title">Product 1</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£99</div>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Img2</div>
+        <div class="product-info">
+          <div class="product-title">Product 2</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£95</div>
+        </div>
+        <button class="btn">Add to Basket</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Img3</div>
+        <div class="product-info">
+          <div class="product-title">Product 3</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£18</div>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Img4</div>
+        <div class="product-info">
+          <div class="product-title">Product 4</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£23</div>
+        </div>
+        <button class="btn">Add to Basket</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Img5</div>
+        <div class="product-info">
+          <div class="product-title">Product 5</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£105</div>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Img6</div>
+        <div class="product-info">
+          <div class="product-title">Product 6</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£805</div>
+        </div>
+        <button class="btn">Add to Basket</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Img7</div>
+        <div class="product-info">
+          <div class="product-title">Product 7</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£11</div>
+        </div>
+        <button class="btn">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Img8</div>
+        <div class="product-info">
+          <div class="product-title">Product 8</div>
+          <div class="product-desc">Product overview…</div>
+          <div class="product-price">£30</div>
+        </div>
+        <button class="btn">Add to Basket</button>
+      </div>
+    </div>
+    <button class="more-btn">View More Products</button>
+  </div>
+  <!-- NetEase Music BGM Player -->
+  <meting-js
+    server="netease"
+    type="song"
+    id="1445203309"
+    fixed="true"
+    autoplay="true"
+    loop="all"
+    order="list"
+    volume="0.5"
+  ></meting-js>
+</body>
+</html>
