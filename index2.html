@@ -228,6 +228,23 @@
   opacity: 0;
   pointer-events: none;
 }
+  .survey-desc {
+  margin: 0 0 26px 0;
+  padding-left: 1.6em;
+  color: #a30d13;
+  font-size: 1.14rem;
+  line-height: 1.7;
+  font-family: 'Noto Serif SC', serif;
+  text-align: left;
+  max-width: 900px;
+}
+.survey-desc li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+@media (max-width: 600px) {
+  .survey-desc { font-size: 1.01rem; padding-left: 1.2em;}
+}
   </style>
 </head>
 <body>
@@ -238,12 +255,12 @@
   <div class="container">
     <span class="title-main">Simulation of Cross-Cultural Sensory Stimulation and Online Shopping Experiences:</span>
     <span class="title-sub">Page and Music Sensory Stimulation</span>
-    <p>
-      Thank you for participating in this questionnaire. 
-      This page presents a simulated online shopping website with background music, aiming to investigate how different sensory elements influence users’ emotional engagement and satisfaction with online shopping. </span>
-      Please carefully browse the page and listen to the music, then answer the questionnaire based on your true experience. </span>
-      This page is for academic research purposes only, and all data will be kept strictly confidential.</span>
-    </p>
+    <ul class="survey-desc">
+  <li>Thank you for participating in this questionnaire!</li>
+  <li>This page presents a simulated online shopping website with background music, aiming to investigate how different sensory elements influence users’ emotional engagement and satisfaction with online shopping.</li>
+  <li>This page is for academic research purposes only, and all data will be kept strictly confidential.</li>
+  <li>Please carefully browse the page and listen to the music, then answer the questionnaire based on your true experience.</li>
+</ul>
     <div class="product-list">
       <div class="product-card">
         <div class="product-img">Img1</div>
