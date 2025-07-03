@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>跨文化感官刺激与在线购物体验模拟</title>
+  <!-- Fonts and APlayer, MetingJS dependencies -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+  <style>
+    body {
+      background-color: #f8efe6;
+      background-image: url('卷云纹.png');
+      background-repeat: repeat;
+      background-size: 340px auto;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .navbar {
+      width: 100%;
+      height: 56px;
+      background: #c4241c;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 1.18rem;
+      letter-spacing: 2px;
+      font-family: 'Montserrat', 'Noto Serif SC', serif;
+      padding: 0 40px;
+      box-shadow: 0 4px 16px #b67d2f16;
+    }
+    .container {
+      max-width: 960px;
+      margin: 48px auto 0 auto;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px #cead4c24;
+      padding: 34px 26px 38px 26px;
+      border: 3.5px solid #cead4c;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .title-main {
+      color: #cead4c;
+      font-size: 2.1rem;
+      text-align: center;
+      letter-spacing: 2.5px;
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 700;
+      margin-bottom: 0px;
+      margin-top: 6px;
+      line-height: 1.2;
+      text-shadow: 1px 1px 0 #fff8d7;
+      display: block;
+    }
+    .title-sub {
+      color: #cead4c;
+      font-size: 2.1rem;
+      text-align: center;
+      letter-spacing: 2.5px;
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 700;
+      margin-bottom: 18px;
+      margin-top: 0px;
+      line-height: 1.2;
+      text-shadow: 1px 1px 0 #fff8d7;
+      display: block;
+    }
+    p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #a30d13;
+      text-align: center;
+      font-family: 'Noto Serif SC', serif;
+      margin: 0 0 22px 0;
+    }
+    .product-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin: 30px 0 22px 0;
+    }
+    .product-card {
+      flex: 1 1 420px;
+      max-width: 500px;
+      min-width: 295px;
+      background: #fff6f0ee;
+      border-radius: 16px;
+      padding: 18px 20px 16px 20px;
+      box-shadow: 0 2px 12px #cead4c18;
+      border: 1.5px solid #e9c769;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 96px;
+      transition: box-shadow 0.2s;
+      position: relative;
+      margin-bottom: 0;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 24px #c4241c22;
+    }
+    .product-img {
+      width: 100px;
+      height: 100px;
+      background: #fff4ea;
+      border-radius: 12px;
+      border: 1.2px solid #e9c769;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      color: #b67d2f;
+      font-family: 'Montserrat', Arial, sans-serif;
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+    .product-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .product-title {
+      color: #a30d13;
+      font-weight: bold;
+      font-size: 1.13rem;
+      margin-bottom: 4px;
+      font-family: 'Noto Serif SC', serif;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: initial;
+    }
+    .product-desc {
+      font-size: 0.99rem;
+      color: #77411c;
+      margin-bottom: 6px;
+      font-family: 'Noto Serif SC', serif;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: initial;
+    }
+    .product-price {
+      color: #cead4c;
+      font-size: 1.09rem;
+      margin-top: 1px;
+      font-weight: 600;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .btn {
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 18px;
+      padding: 9px 22px;
+      background: linear-gradient(90deg, #cead4c 60%, #e74a2f 100%);
+      color: #fff;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.02rem;
+      border: none;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #b67d2f33;
+      transition: background .3s;
+      white-space: normal;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #e74a2f, #cead4c 100%);
+    }
+    .more-btn {
+      display: block;
+      margin: 16px auto 0 auto;
+      padding: 10px 36px;
+      font-size: 1.08rem;
+      background: linear-gradient(90deg, #cead4c 50%, #e74a2f 100%);
+      border-radius: 30px;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      box-shadow: 0 3px 12px #b67d2f33;
+      transition: background .3s;
+    }
+    .more-btn:hover {
+      background: linear-gradient(90deg, #e74a2f, #cead4c 100%);
+    }
+    @media (max-width: 950px) {
+      .container { padding: 16px 2vw; }
+      .product-card { min-width: 220px; }
+    }
+    @media (max-width: 800px) {
+      .container { max-width: 99vw; }
+      .product-list { flex-direction: column; gap: 18px; }
+      .product-card { max-width: 99vw; min-width: 0; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 7px 0; }
+      .title-main, .title-sub { font-size: 1.13rem; }
+      .product-card { flex-direction: column; gap: 8px; padding: 14px 8px; }
+      .product-img { width: 56px; height: 56px; }
+      .btn, .more-btn { font-size: 0.99rem; padding: 7px 12px;}
+    }
+  .music-tip {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(34,34,34, 0.93);
+  color: #fff;
+  padding: 22px 36px 18px 36px;
+  border-radius: 16px;
+  font-size: 1.18rem;
+  font-family: 'Montserrat', 'Noto Serif SC', serif;
+  box-shadow: 0 4px 24px #2227;
+  z-index: 9999;
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+.music-tip.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+  .survey-desc {
+  margin: 0 0 26px 0;
+  padding-left: 1.6em;
+  color: #a30d13;
+  font-size: 1.14rem;
+  line-height: 1.7;
+  font-family: 'Noto Serif SC', serif;
+  text-align: left;
+  max-width: 900px;
+}
+.survey-desc li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+@media (max-width: 600px) {
+  .survey-desc { font-size: 1.01rem; padding-left: 1.2em;}
+}
+  </style>
+</head>
+<body>
+  <div id="music-tip" class="music-tip">
+    <span style="font-size:0.98em;color:#aaa;">请点击任意位置以开启背景音乐。</span>
+  </div>
+  <div class="navbar">调查问卷实验材料 A</div>
+  <div class="container">
+    <span class="title-main">跨文化感官刺激与在线购物体验模拟</span>
+    <span class="title-sub">网页与音乐感官刺激</span>
+    <ul class="survey-desc">
+      <li>感谢您参与本问卷！</li>
+      <li>本页面为模拟在线购物网页，配有背景音乐，旨在研究不同感官元素对用户情感参与及满意度的影响。</li>
+      <li>本页面仅用于学术研究，所有数据均严格保密。</li>
+      <li>请您认真浏览页面并聆听背景音乐，根据真实体验作答问卷。</li>
+    </ul>
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product1.JPG" alt="产品1" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">晨雾山影帆布袋</div>
+          <div class="product-desc">晨曦山色与湖光，随行携带自然温柔。</div>
+          <div class="product-price">¥99</div>
+          <button class="btn">立即购买</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product2.JPG" alt="产品2" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">天鹅水影眼镜布</div>
+          <div class="product-desc">天鹅与水面倒影，为日常清洁添一抹灵动。</div>
+          <div class="product-price">¥95</div>
+          <button class="btn">加入购物篮</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product3.JPG" alt="产品3" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">海岸灯塔收纳束口袋</div>
+          <div class="product-desc">海岸灯塔与公路，收纳你的旅行小物。</div>
+          <div class="product-price">¥180</div>
+          <button class="btn">立即购买</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product4.JPG" alt="产品4" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">涟漪之光地垫</div>
+          <div class="product-desc">捕捉阳光点点波光，为空间增添一抹清新。</div>
+          <div class="product-price">¥230</div>
+          <button class="btn">加入购物篮</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product5.JPG" alt="产品5" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">牧野时光玻璃相框</div>
+          <div class="product-desc">牧场树影定格，时光温柔流转。</div>
+          <div class="product-price">¥105</div>
+          <button class="btn">立即购买</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product6.JPG" alt="产品6" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">自然印象胶片书签</div>
+          <div class="product-desc">胶片设计，记录三段自然时光的故事。</div>
+          <div class="product-price">¥85</div>
+          <button class="btn">加入购物篮</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product7.JPG" alt="产品7" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">风景纪念双面币</div>
+          <div class="product-desc">双面自然风光，纪念每一段独特旅程。</div>
+          <div class="product-price">¥110</div>
+          <button class="btn">立即购买</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Product8.JPG" alt="产品8" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+        </div>
+        <div class="product-info">
+          <div class="product-title">绿野静憩毛毯</div>
+          <div class="product-desc">绿意环绕，享受属于自己的悠然时光。</div>
+          <div class="product-price">¥300</div>
+          <button class="btn">加入购物篮</button>
+        </div>
+      </div>
+    </div>
+    <button class="more-btn">查看更多商品</button>
+  </div>
+  <!-- NetEase Music BGM Player -->
+  <meting-js
+    server="netease"
+    type="song"
+    id="2065383797"
+    fixed="true"
+    autoplay="true"
+    loop="all"
+    order="list"
+    volume="0.5"
+  ></meting-js>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var played = false;
+  var tip = document.getElementById('music-tip');
+  function playBGM() {
+    if (played) return;
+    var ap = document.querySelector('meting-js').aplayer;
+    if (ap) {
+      ap.audio.play();
+      played = true;
+      if (tip) {
+        tip.classList.add('hide');
+        setTimeout(function(){ tip.style.display = 'none'; }, 900);
+      }
+    } else {
+      setTimeout(playBGM, 500);
+    }
+  }
+  document.body.addEventListener('click', playBGM, { once: true });
+});
+</script>
+<div id="img-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.65); z-index:10000; justify-content:center; align-items:center;">
+  <img id="modal-img" src="" style="max-width:80vw; max-height:80vh; border-radius:16px; box-shadow:0 0 40px #0008;">
+</div>
+<script>
+document.querySelectorAll('.enlarge-img').forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.onclick = () => {
+    document.getElementById('modal-img').src = img.src;
+    document.getElementById('img-modal').style.display = 'flex';
+  };
+});
+document.getElementById('img
