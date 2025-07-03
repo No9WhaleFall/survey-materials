@@ -133,7 +133,7 @@
       font-size: 1.13rem;
       margin-bottom: 4px;
       font-family: 'Noto Serif SC', serif;
-      white-space: nowrap;
+      white-space: normal;
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -142,9 +142,9 @@
       color: #3b568f;
       margin-bottom: 6px;
       font-family: 'Noto Serif SC', serif;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;      /* 修改：允许换行 */
+      overflow: visible;        /* 修改：溢出可见 */
+      text-overflow: initial;   /* 修改：关闭省略号 */
     }
     .product-price {
       color: #1a347a;
@@ -156,6 +156,7 @@
     .btn {
       display: inline-block;
       margin-left: 20px;
+      margin-top: 18px;
       padding: 9px 22px;
       background: linear-gradient(90deg, #4a7bd4 60%, #193063 100%);
       color: #fff;
@@ -167,7 +168,7 @@
       cursor: pointer;
       box-shadow: 0 2px 8px #4a7bd433;
       transition: background .3s;
-      white-space: nowrap;
+      white-space: normal;
     }
     .btn:hover {
       background: linear-gradient(90deg, #193063 60%, #4a7bd4 100%);
@@ -267,88 +268,88 @@
     <img src="Product1.JPG" alt="Product 1" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
   </div>
         <div class="product-info">
-          <div class="product-title">Product 1</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£9.9</div>
+          <div class="product-title">Misty Hills Tote Bag</div>
+          <div class="product-desc">Morning mountains and lake light, carry the natural tenderness along with the travelling.</div>
+          <div class="product-price">¥99</div>
+          <button class="btn">Buy Now</button>
         </div>
-        <button class="btn">Buy Now</button>
       </div>
       <div class="product-card">
 <div class="product-img">
     <img src="Product2.JPG" alt="Product 2" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
   </div>
         <div class="product-info">
-          <div class="product-title">Product 2</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£9.5</div>
+          <div class="product-title">Swan Reflection Glasses Cloth</div>
+          <div class="product-desc">Swan and water reflection to brighten up a little daily cleaning.</div>
+          <div class="product-price">¥95</div>
+          <button class="btn">Add to Basket</button>
         </div>
-        <button class="btn">Add to Basket</button>
       </div>
       <div class="product-card">
 <div class="product-img">
-    <img src="Product3.JPG" alt="Product 3" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
-  </div>
+     <img src="Product3.JPG" alt="Product 3" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+  </div>        
         <div class="product-info">
-          <div class="product-title">Product 3</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£18</div>
+          <div class="product-title">Lighthouse Drawstring Pouch</div>
+          <div class="product-desc">Coastal lighthouses and roads to organise your travel bits and pieces.</div>
+          <div class="product-price">¥180</div>
+          <button class="btn">Buy Now</button>
         </div>
-        <button class="btn">Buy Now</button>
       </div>
       <div class="product-card">
 <div class="product-img">
     <img src="Product4.JPG" alt="Product 4" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
   </div>
         <div class="product-info">
-          <div class="product-title">Product 4</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£23</div>
+          <div class="product-title">Ripple Light Floor Mat</div>
+          <div class="product-desc">Capture the moment the sunlight glints off the water and add a refreshing touch to your living space.</div>
+          <div class="product-price">¥230</div>
+          <button class="btn">Add to Basket</button>
         </div>
-        <button class="btn">Add to Basket</button>
       </div>
       <div class="product-card">
 <div class="product-img">
     <img src="Product5.JPG" alt="Product 5" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
   </div>
         <div class="product-info">
-          <div class="product-title">Product 5</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£10.5</div>
+          <div class="product-title">Pasture Memory Glass Frame</div>
+          <div class="product-desc">Freeze time in the pasture and the shadows of the trees.</div>
+          <div class="product-price">¥105</div>
+          <button class="btn">Buy Now</button>
         </div>
-        <button class="btn">Buy Now</button>
       </div>
       <div class="product-card">
 <div class="product-img">
-    <img src="Product6.JPG" alt="Product 6" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+   <img src="Product6.JPG" alt="Product 6" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
   </div>
         <div class="product-info">
-          <div class="product-title">Product 6</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£8.5</div>
+          <div class="product-title">Nature Moments Bookmark</div>
+          <div class="product-desc">Designed to mimic video film, recording three natural impressions full of storytelling at the same time.</div>
+          <div class="product-price">¥85</div>
+          <button class="btn">Add to Basket</button>
         </div>
-        <button class="btn">Add to Basket</button>
       </div>
       <div class="product-card">
 <div class="product-img">
-    <img src="Product7.JPG" alt="Product 7" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
+     <img src="Product7.JPG" alt="Product 7" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
   </div>
         <div class="product-info">
-          <div class="product-title">Product 7</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£11</div>
+          <div class="product-title">Landscape Journey Commemorative Coin</div>
+          <div class="product-desc">Printed on both sides with nature scenes to memorise the unique impression of this journey.</div>
+          <div class="product-price">¥110</div>
+          <button class="btn">Buy Now</button>
         </div>
-        <button class="btn">Buy Now</button>
       </div>
       <div class="product-card">
 <div class="product-img">
     <img src="Product8.JPG" alt="Product 8" class="enlarge-img" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
   </div>
-        <div class="product-info">
-          <div class="product-title">Product 8</div>
-          <div class="product-desc">Product overview…</div>
-          <div class="product-price">£30</div>
+                <div class="product-info">
+          <div class="product-title">Verdant Pastures Blanket</div>
+          <div class="product-desc">Surrounded by greenery, enjoy your own time at rest.</div>
+          <div class="product-price">¥300</div>
+          <button class="btn">Add to Basket</button>
         </div>
-        <button class="btn">Add to Basket</button>
       </div>
     </div>
     <button class="more-btn">View More Products</button>
