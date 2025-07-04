@@ -397,4 +397,9 @@ document.querySelectorAll('.enlarge-img').forEach(img => {
     document.getElementById('img-modal').style.display = 'flex';
   };
 });
-document.getElementById('img
+document.getElementById('img-modal').onclick = function(e) {
+  if (e.target === this) this.style.display = 'none';
+};
+</script>
+</body>
+</html>
