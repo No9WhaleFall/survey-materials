@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>问卷材料导航</title>
+  <style>
+    body { font-family: 'Arial', sans-serif; background: #f8f9fa; }
+    h1 { color: #333; }
+    ul { padding-left: 0; }
+    li { margin: 16px 0; list-style: none; }
+    a { color: #0a7cff; text-decoration: none; font-size: 1.1em;}
+    a:hover { text-decoration: underline; }
+    .container { max-width: 600px; margin: 60px auto; padding: 24px; background: #fff; border-radius: 10px; box-shadow: 0 4px 16px #eee; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>问卷材料导航页</h1>
+    <ul>
+      <li><a href="index2.html">材料二（中国组英文）</a></li>
+      <li><a href="index3.html">材料三（英国组英文）</a></li>
+      <li><a href="index4.html">材料四（通用组英文）</a></li>
+      <li><a href="index5.html">材料五（通用组中文）</a></li>
+      <li><a href="index6.html">材料一（中国组中文）</a></li>
+      <!-- 根据实际文件继续添加 -->
+    </ul>
+  </div>
+</body>
+</html>
