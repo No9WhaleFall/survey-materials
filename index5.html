@@ -10,6 +10,12 @@
   <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
   <style>
     /* ...（此处样式无须更改，省略）... */
+    .center-text {
+  text-align: center !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
     body {
       background-color: #fff;
       margin: 0;
@@ -350,8 +356,10 @@
         </div>
       </div>
     </div>
-    <button class="more-btn">请点击下一部分继续完成问卷</button>
-  </div>
+ <div class="survey-desc center-text">
+  请回答问卷<br>
+  点击下一部分继续填写问卷
+</div>
   <!-- NetEase Music BGM Player -->
   <meting-js
     server="netease"
