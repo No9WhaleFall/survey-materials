@@ -9,6 +9,20 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
   <style>
+   .more-info {
+  display: block;
+  margin: 16px auto 0 auto;
+  padding: 10px 36px;
+  font-size: 1.08rem;
+  background: linear-gradient(90deg, #cead4c 50%, #e74a2f 100%);
+  border-radius: 30px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-align: center;
+  box-shadow: 0 3px 12px #b67d2f33;
+  max-width: 100%;
+}
     body {
       background-color: #f8efe6;
       background-image: url('卷云纹.png');
@@ -352,9 +366,10 @@
         </div>
       </div>
     </div>
-    <button class="more-btn">Please return to the questionnaire <br> 
-    Click the next section to continue completing the questionnaire </button>
-  </div>
+    <div class="more-info">
+  Please return to the questionnaire<br>
+  Click the next section to continue completing the questionnaire
+</div>
   <!-- NetEase Music BGM Player -->
   <meting-js
     server="netease"
