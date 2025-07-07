@@ -1,29 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>问卷材料导航</title>
+  <title>问卷材料导航页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Arial', sans-serif; background: #f8f9fa; }
-    h1 { color: #333; }
-    ul { padding-left: 0; }
-    li { margin: 16px 0; list-style: none; }
-    a { color: #0a7cff; text-decoration: none; font-size: 1.1em;}
-    a:hover { text-decoration: underline; }
-    .container { max-width: 600px; margin: 60px auto; padding: 24px; background: #fff; border-radius: 10px; box-shadow: 0 4px 16px #eee; }
+    body {
+      background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      font-family: "PingFang SC", "Helvetica Neue", Arial, "Microsoft Yahei", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 680px;
+      margin: 64px auto 0;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 30px 0 rgba(60, 90, 140, 0.1);
+      padding: 32px 28px;
+    }
+    h1 {
+      font-size: 2.1em;
+      letter-spacing: 0.08em;
+      margin-bottom: 28px;
+      color: #3060b0;
+      text-align: center;
+    }
+    .card-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 600px) {
+      .card-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: #f7fafc;
+      border-radius: 15px;
+      box-shadow: 0 2px 12px rgba(70,120,200,0.07);
+      transition: transform 0.15s, box-shadow 0.15s;
+      padding: 32px 20px;
+      text-align: center;
+      cursor: pointer;
+      border: 1.5px solid #e6e8ef;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(70,120,200,0.13);
+      border-color: #6ca6f7;
+    }
+    .card-title {
+      font-size: 1.13em;
+      color: #2d3a4e;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .card-desc {
+      font-size: 0.98em;
+      color: #5876a3;
+      margin-bottom: 6px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>问卷材料导航页</h1>
-    <ul>
-      <li><a href="index6.html">材料一（中国组中文）</a></li>
-      <li><a href="index2.html">材料二（中国组英文）</a></li>
-      <li><a href="index3.html">材料三（英国组英文）</a></li>
-      <li><a href="index4.html">材料四（通用组英文）</a></li>
-      <li><a href="index5.html">材料五（通用组中文）</a></li>
-      <!-- 根据实际文件继续添加 -->
-    </ul>
+    <div class="card-list">
+      <a href="index6.html">
+        <div class="card">
+          <div class="card-title">材料一</div>
+          <div class="card-desc">中国组（中文）</div>
+        </div>
+      </a>
+      <a href="index2.html">
+        <div class="card">
+          <div class="card-title">材料二</div>
+          <div class="card-desc">中国组（英文）</div>
+        </div>
+      </a>
+      <a href="index3.html">
+        <div class="card">
+          <div class="card-title">材料三</div>
+          <div class="card-desc">英国组（英文）</div>
+        </div>
+      </a>
+      <a href="index4.html">
+        <div class="card">
+          <div class="card-title">材料四</div>
+          <div class="card-desc">通用组（英文）</div>
+        </div>
+      </a>
+      <a href="index5.html">
+        <div class="card">
+          <div class="card-title">材料五</div>
+          <div class="card-desc">通用组（中文）</div>
+        </div>
+      </a>
+    </div>
   </div>
 </body>
 </html>
